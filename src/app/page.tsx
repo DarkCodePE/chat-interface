@@ -39,7 +39,7 @@ const ChatAiIcons = [
     label: "Volume",
   },
 ];
-const API_URL = "http://localhost:8000/chat";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/chat";
 
 export default function Home() {
   const [messages, setMessages] = useState<
