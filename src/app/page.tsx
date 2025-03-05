@@ -39,7 +39,7 @@ const ChatAiIcons = [
     label: "Volume",
   },
 ];
-const API_URL = "http://localhost:9024/chat";
+const API_URL = "http://localhost:8000/chat";
 
 export default function Home() {
   const [messages, setMessages] = useState<
@@ -189,7 +189,7 @@ export default function Home() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={onKeyDown}
-                placeholder="Type your message here..."
+                placeholder="Escriba su mensaje aquí..."
                 className="rounded-lg bg-background border-0 shadow-none focus-visible:ring-0"
             />
             <div className="flex items-center p-3 pt-0">
@@ -207,27 +207,11 @@ export default function Home() {
                   size="sm"
                   className="ml-auto gap-1.5"
               >
-                Send Message
+                Enviar Mensaje
                 <CornerDownLeft className="size-3.5"/>
               </Button>
             </div>
           </form>
-          <div className="pt-4 flex gap-2 items-center justify-center">
-            <GitHubLogoIcon className="size-4"/>
-            <p className="text-xs">
-              <a
-                  href="https://github.com/jakobhoeg/shadcn-chat"
-                  className="font-bold inline-flex flex-1 justify-center gap-1 leading-4 hover:underline"
-              >
-                shadcn-chat
-                <svg aria-hidden="true" height="7" viewBox="0 0 6 6" width="7" className="opacity-70">
-                  <path
-                      d="M1.25215 5.54731L0.622742 4.9179L3.78169 1.75597H1.3834L1.38936 0.890915H5.27615V4.78069H4.40513L4.41109 2.38538L1.25215 5.54731Z"
-                      fill="currentColor"></path>
-                </svg>
-              </a>
-            </p>
-          </div>
         </div>
       </main>
   );

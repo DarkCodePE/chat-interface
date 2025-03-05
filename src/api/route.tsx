@@ -2,7 +2,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 // Update this constant with your actual backend URL
-const BACKEND_URL = 'http://localhost:9024';
+const BACKEND_URL = 'http://localhost:8000';
 
 export async function POST(request: NextRequest) {
     try {

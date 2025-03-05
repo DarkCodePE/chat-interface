@@ -44,7 +44,7 @@ interface ChatResponseBody {
     answer: string;
     error?: string;
 }
-const API_URL = "http://localhost:9024/chat";
+const API_URL = "http://localhost:8000/chat";
 export default function ChatSupport() {
     const [isGenerating, setIsGenerating] = useState(false);
     const [messages, setMessages] = useState<ChatMessage[]>([
