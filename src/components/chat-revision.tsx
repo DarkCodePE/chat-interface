@@ -50,7 +50,7 @@ export default function ChatSupport() {
     const [messages, setMessages] = useState<ChatMessage[]>([
         {
             role: "ai",
-            content: "Hello! I'm the AI assistant. How can I help you today?",
+            content: "  ¡Hola! Soy tu asistente virtual. ¿En qué te puedo ayudar con tu revisión técnica?",
         },
     ]);
     const [input, setInput] = useState("");
@@ -224,13 +224,12 @@ export default function ChatSupport() {
     return (
         <ExpandableChat size="md" position="bottom-right">
             <ExpandableChatHeader className="bg-muted/60 flex-col text-center justify-center">
-                <h1 className="text-xl font-semibold">Chat with our AI ✨</h1>
-                <p>Ask any question for our AI to answer</p>
+                <h1 className="text-xl font-semibold">🔧Asesor Virtual de Revisiones Técnicas🚗</h1>
                 <div className="flex gap-2 items-center pt-2">
                     <Button variant="secondary" onClick={startNewChat}>
-                        New Chat
+                        Nueva Consulta
                     </Button>
-                    <Button variant="secondary">See FAQ</Button>
+                    <Button variant="secondary">Ver Requisitos</Button>
                 </div>
             </ExpandableChatHeader>
             <ExpandableChatBody>
