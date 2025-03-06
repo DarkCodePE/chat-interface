@@ -73,7 +73,6 @@ export default function ChatEmbed() {
     const [threadId, setThreadId] = useState<string>("");
     const [error, setError] = useState<string | null>(null);
     const [apiUrl, setApiUrl] = useState<string>("");
-    const [isExpanded, setIsExpanded] = useState(false);
 
     const messagesRef = useRef<HTMLDivElement>(null);
     const formRef = useRef<HTMLFormElement>(null);
@@ -110,10 +109,10 @@ export default function ChatEmbed() {
 
         switch (type) {
             case 'CHAT_EXPANDED':
-                setIsExpanded(true);
+                // Handle expanded state in the parent
                 break;
             case 'CHAT_COLLAPSED':
-                setIsExpanded(false);
+                // Handle collapsed state in the parent
                 break;
             case 'SEND_MESSAGE':
                 if (data?.message) {
@@ -288,7 +287,7 @@ export default function ChatEmbed() {
     };
 
     return (
-        <ExpandableChat size="md" position="bottom-right" isDefaultExpanded={isExpanded}>
+        <ExpandableChat size="md" position="bottom-right">
             <ExpandableChatHeader className="bg-muted/60 flex-col text-center justify-center">
                 <h1 className="text-xl font-semibold">🔧Asesor Virtual de Revisiones Técnicas🚗</h1>
                 <div className="flex gap-2 items-center pt-2">

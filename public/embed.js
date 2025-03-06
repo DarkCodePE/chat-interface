@@ -132,26 +132,39 @@
         isExpanded = !isExpanded;
 
         if (isExpanded) {
+            // Expand the chat
             container.classList.remove('rt-chat-collapsed');
             toggleButton.style.display = 'none';
 
-            // Send message to iframe
+            // Show iframe content
             const iframeEl = document.getElementById('rt-chat-iframe');
-            if (iframeEl && iframeEl.contentWindow) {
-                iframeEl.contentWindow.postMessage({
-                    type: 'CHAT_EXPANDED'
-                }, '*');
+            if (iframeEl) {
+                iframeEl.style.display = 'block';
+
+                // Notify iframe if needed
+                if (iframeEl.contentWindow) {
+                    iframeEl.contentWindow.postMessage({
+                        type: 'CHAT_EXPANDED'
+                    }, '*');
+                }
             }
         } else {
+            // Collapse the chat
             container.classList.add('rt-chat-collapsed');
             toggleButton.style.display = 'flex';
 
-            // Send message to iframe
+            // We can either hide the iframe or keep it loaded but collapsed
             const iframeEl = document.getElementById('rt-chat-iframe');
-            if (iframeEl && iframeEl.contentWindow) {
-                iframeEl.contentWindow.postMessage({
-                    type: 'CHAT_COLLAPSED'
-                }, '*');
+            if (iframeEl) {
+                // Option 1: Hide it completely
+                // iframeEl.style.display = 'none';
+
+                // Option 2: Keep it loaded but notify the iframe
+                if (iframeEl.contentWindow) {
+                    iframeEl.contentWindow.postMessage({
+                        type: 'CHAT_COLLAPSED'
+                    }, '*');
+                }
             }
         }
     };
