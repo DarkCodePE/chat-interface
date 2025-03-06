@@ -58,7 +58,7 @@ const getApiUrl = () => {
     }
 
     // Fallback to environment variable
-    return process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/chat";
+    return process.env.NEXT_PUBLIC_API_URL || "https://chat.orlandokuan.org/chat";
 };
 
 export default function ChatEmbed() {
