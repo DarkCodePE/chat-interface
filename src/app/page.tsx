@@ -50,7 +50,7 @@ export default function Home() {
 
   const messagesRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
-  const threadId = "1234"; // O genera un ID único para cada sesión
+  const threadId = "312324"; // O genera un ID único para cada sesión
 
   // Cargar historial de chat al montar el componente
   useEffect(() => {
